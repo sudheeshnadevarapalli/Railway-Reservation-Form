@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+		
+	</script>
+	<script src=" https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js">
+		
+	</script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js">
+		
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h2 style="text-align: center">Railway Reservation</h2>
+		<form action="" name="registration">
+			<label for="firstname">First Name</label>
+			<input type="text" name="firstname" id="firstname" placeholder="John"/><br><br>
+			
+			<label for="lastname">Last Name</label>
+			<input type="text" name="lastname" id="lastname"placeholder="Doe"/><br><br>
+			
+			<label for="email">Email</label>
+			<input type="email" name="email"id="email"placeholder="john@doe.com"/><br><br>
+			
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"/><br><br>
+			
+			<label for="age">Age</label>
+			<input type="text" name="age" id="age"placeholder="Enter Age" requiredmax="60"/><br><br>
+
+			<label for="source">Source</label>
+			<input type="text" name="source" id="source"placeholder="Enter Boarding Details" required/>
+
+			<label for="dest">Destination</label>
+			<input type="dest" name="dest" id="dest"placeholder="Enter Destination" required/><br><br>
+			<label for="tnum">Train number</label>
+			<input type="tnum" name="tnum" id="tnum"placeholder="Enter Train number" required/><br><br>
+			<button type="submit">Register</button>
+			</form></div></body>
+			<script>$(function() {
+			$("form[name='registration']").validate({
+			// Specify validation rules
+			rules:{
+			firstname:"required",
+			lastname:"required",
+			email:{required:true,
+			// Specify that email should be validated
+			// by the built-in "email" rule
+			email:true
+			},
+			password:{
+			required:true,
+			minlength:5
+			}
+			},
+			// Specify validation error messages
+			messages:{
+				firstname:"Please enter your firstname",lastname:"Please enter your lastname",password:
+			{
+			required:"Please provide a password",
+		    minlength:"Your password must be at least 5 characters long"
+	},
+  email:{
+  email:"Please enter a valid email address",
+  reqired:"Please enter email address"},
+  source:{
+          required:"Please Enter Source "
+      },
+  dest:{
+  required:"Please enter destination to be reached "
+},
+age:{
+       max:"The passenger is senior citizen. TAKE CARE"
+   },
+tnum:{
+required:"Enter train number to be boarded"
+}
+},
+submitHandler:{
+function(form) {
+form.submit();
+}
+}
+});});
+</script>
+</html>
+
+
